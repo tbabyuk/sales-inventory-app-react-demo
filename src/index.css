@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Variables */
+
+:root {
+  --white: #f5f5f5;
+  --light-gray: #d9d9d9;
+  --medium-gray: hsl(0, 0%, 75%);
+  --dark-gray: #7b7b7b;
+  --blue: #1e90ff;
+  --dark-blue: hsl(210, 100%, 36%);
+  --green: #5cc240;
+  --red: #e93c3c;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+/* HEADER STYLING */
+.header {
+  background-color: var(--white);
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header div:nth-child(1) {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.header div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header div:nth-child(3) {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.header div:nth-child(3) img {
+  width: 40%;
+}
+
+.welcome-message {
+    font-style: italic;
+}
+
+/* MAIN TOP */
+
+.main-top {
+  background-color: var(--white);
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.main-top div {
+  display: grid;
+  place-items: center;
+}
+
+.main-bottom {
+  background-color: var(--white);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-item {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+}
+
+.search-item-1 div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.search-item-2 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer div {
+  display: grid;
+  place-items: center;
+}
+
+.footer {
+  background-color: var(--white);
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+
+
+/* REPEATING ELEMENTS */
+
+/* buttons */
+
+.button-big {
+  height: 55px;
+  width: 130px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px var(--light-gray);
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.button-small {
+  height: 35px;
+  width: 100px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px var(--light-gray);
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.button-blue {
+  background-color: var(--blue);
+}
+
+.button-blue:hover {
+  background-color: hsl(210, 100%, 46%);
+}
+
+.button-green {
+  background-color: var(--green);
+}
+
+.button-green:hover {
+  background-color: hsl(107, 52%, 41%);
+}
+
+.button-red {
+  background-color: var(--red);
+}
+
+.button-red:hover {
+  background-color: hsl(0, 80%, 47%);
+}
+
+/* inputs */
+.dcam-input {
+  height: 55px;
+  width: 130px;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid var(--dark-gray);
+  padding-left: 7px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.book-list {
+    height: 55px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid var(--dark-gray);
+}
+
+/* other */
+
+.border-round {
+  border-radius: 10px;
+}
+
+
+
+
+
+
+/* POPUP STYLING */
+
+
+.popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.popup-inner {
+  position: absolute;
+  top: 50px;
+  width: 70%;
+  height: 85%;
+  background: var(--white);
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+  font-size: 0.9rem;
+  background: var(--light-gray);
+}
+
+table > tbody > tr > :nth-child(4) {
+  text-align: center;
+}
+
+thead tr {
+  color: var(--white);
+  background: var(--dark-blue);
+}
+
+table th, td {
+  padding: 3px 10px;
+  border: 1.5px solid white;
+}
+
+.qty {
+    position: relative;
+}
+
+.qty span {
+  padding-left: 30px;
+}
+
+.qty button {
+  position: absolute;
+  right: 30px;
+  width: fit-content;
+  padding: 0 5px;
+  font-size: small;
+  border: none;
+  border-radius: 3px;
+  background: var(--light-gray);
+}
+
+.close-popup {
+  font-size: 4rem;
+  color: var(--light-gray);
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  cursor: pointer;
+}
+
+
+
+
+
+
