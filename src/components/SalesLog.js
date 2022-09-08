@@ -35,8 +35,8 @@ function SalesLog({handleSalesLog}) {
 
   // retrieve any data stored in "sales" collection
   useEffect(() => {
-    const ref = collection(db, 'sales')
-    const q = query(ref, orderBy("time", "desc"))
+    const colRef = collection(db, 'sales')
+    const q = query(colRef, orderBy("time", "desc"))
     getDocs(q)
       .then((snapshot) => {
         let results = []

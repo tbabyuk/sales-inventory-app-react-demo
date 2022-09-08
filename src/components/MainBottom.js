@@ -18,18 +18,18 @@ function MainBottom() {
       })
   }
 
-//   .collection("books")
-// .orderBy("", "asc")
-
-  // fetch books from firestore
+  // fetch books from 'books' collection
   useEffect(() => {
-    const ref = collection(db, 'books')
 
-  //order query
-  const q = query(ref, orderBy("order", "asc")) 
+  // reference 'books' collection
+    const colRef = collection(db, 'books')
+
+  // order query
+  const q = query(colRef, orderBy("order", "asc")) 
     
+  // get data from 'books' collection and set it to 'books' state
     getDocs(q)
-      .then((snapshot) => {
+      .then(snapshot => {
         let results = []
         snapshot.docs.forEach(doc => {
           results.push({id: doc.id, ...doc.data()})

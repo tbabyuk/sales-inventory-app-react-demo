@@ -14,17 +14,15 @@ function Popup({handlePopup}) {
 
     const addToLog = async id => {
 
-        const docRef = collection(db, 'sales')
-        console.log(id)
+        const colRef = collection(db, 'sales')
         const targetBk = books.find(bk => bk.id === id)
         const targetTitle = targetBk.title
         const targetTotal = ((targetBk.price * targetBk.tax) + targetBk.price).toFixed(2)
 
         const loc = navigator.language;
-
-        console.log(loc)
     
-        await addDoc(docRef, {
+        //add updated document to sales log
+        await addDoc(colRef, {
             title: targetTitle,
             total: targetTotal,
             time: new Date().toLocaleString('en-US')
@@ -33,21 +31,13 @@ function Popup({handlePopup}) {
     }
 
     const handleSubtract = async id => {
-
         // now, update the quantity of this document
         const docRef = doc(db, 'books', id)
         await updateDoc(docRef, {
             quantity: increment(-1)
         })
+        // add updated book info to sales log
         addToLog(id)
-        
-        
-        // Later, add this document to the Sales Log collection
-
-        // .then(() => {
-        //     saveToSalesLog(docRef)
-        // })
-
     }
 
 
